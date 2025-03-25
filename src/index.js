@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const characterForm = document.getElementById('character-form');
 
     // Initial Fetch of Characters
-    fetch('http://localhost:3000/characters')
+    fetch('https://week-2-code-challenge-flatter-cutie-bariiu.vercel.app/')
         .then(response => response.json())
         .then(data => {
             characters = data;
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         // Post to server
-        fetch('http://localhost:3000/characters', {
+        fetch('https://week-2-code-challenge-flatter-cutie-bariiu.vercel.app/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Helper function for PATCH requests
     function updateServerVotes(characterId, newVotes) {
-        fetch(`http://localhost:3000/characters/${characterId}`, {
+        fetch(`https://json-server-vercel-flax-theta.vercel.app/characters${characterId}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
