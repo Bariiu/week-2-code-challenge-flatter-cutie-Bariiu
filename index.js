@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         voteCount.textContent = currentCharacter.votes;
         votesInput.value = '';
 
-        // Update server
+        // Update server (Extra Bonus)
         updateServerVotes(currentCharacter.id, currentCharacter.votes);
     });
 
@@ -67,11 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
         currentCharacter.votes = 0;
         voteCount.textContent = 0;
 
-        // Update server
+        // Update server (Extra Bonus)
         updateServerVotes(currentCharacter.id, 0);
     });
 
-    // Handle New Character Form Submission
+    // Handle New Character Form Submission (Bonus + Extra Bonus)
     characterForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
             votes: 0
         };
 
-        // Post to server
+        // Post to server (Extra Bonus)
         fetch('http://localhost:3000/characters', {
             method: 'POST',
             headers: {
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Helper function for PATCH requests
+    // Helper function for PATCH requests (Extra Bonus)
     function updateServerVotes(characterId, newVotes) {
         fetch(`http://localhost:3000/characters/${characterId}`, {
             method: 'PATCH',
